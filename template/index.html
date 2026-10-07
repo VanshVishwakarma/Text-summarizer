@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Text Summarizer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #ffffff;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .badge {
+            background: #eff6ff;
+            color: #2563eb;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* Main section */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 60px auto;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .heading h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .heading h1 span {
+            color: #2563eb;
+        }
+
+        .heading p {
+            color: #6b7280;
+            font-size: 17px;
+        }
+
+        /* Main card */
+        .summarizer-card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 220px;
+            resize: vertical;
+            padding: 18px;
+            font-size: 15px;
+            line-height: 1.6;
+            border: 1px solid #d1d5db;
+            border-radius: 12px;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        textarea:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        textarea::placeholder {
+            color: #9ca3af;
+        }
+
+        /* Button */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+        }
+
+        #summarizeBtn {
+            border: none;
+            background: #2563eb;
+            color: white;
+            padding: 13px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        #summarizeBtn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        #summarizeBtn:disabled {
+            background: #93c5fd;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Summary section */
+        .summary-box {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            min-height: 120px;
+        }
+
+        #summary {
+            color: #4b5563;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #9ca3af;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 15px 5%;
+            }
+
+            .heading h1 {
+                font-size: 30px;
+            }
+
+            .container {
+                margin: 35px auto;
+            }
+
+            .summarizer-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            SummarizeAI
+        </div>
+
+        <div class="badge">
+            T5 Powered
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <div class="heading">
+            <h1>
+                Turn Conversations Into
+                <span>Clear Summaries</span>
+            </h1>
+
+            <p>
+                Paste your dialogue below and let our fine-tuned T5 model
+                generate a concise summary.
+            </p>
+        </div>
+
+
+        <!-- Summarizer Card -->
+        <div class="summarizer-card">
+
+            <div class="section-title">
+                Enter Dialogue
+            </div>
+
+            <textarea
+                id="dialogue"
+                placeholder="
+
+Enter your dialogue here."></textarea>
+
+
+            <div class="button-container">
+                <button id="summarizeBtn">
+                    Summarize
+                </button>
+            </div>
+
+
+            <div class="section-title">
+                Generated Summary
+            </div>
+
+            <div class="summary-box">
+                <p id="summary">
+                    Your generated summary will appear here.
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        AI Text Summarizer • Fine-tuned T5 Model
+    </footer>
+
+<script src="/static/script.js"></script>
+
+</body>
+
+</html>
+
