@@ -122,9 +122,15 @@ Response:
 
 FastAPI documentation is available at `/docs`.
 
-## 👨‍💻 Author
 
-**Vansh Vishwakarma**
+## 🚀 Live Demo
 
-B.Tech Computer Science Engineering  
-Machine Learning • Deep Learning • NLP
+Try the deployed application here:
+
+[Live Text Summarizer](https://vanshvishwakarma--t5-text-summarizer-web.modal.run)
+
+## 🤗 Model
+
+The fine-tuned T5 model is hosted on Hugging Face:
+
+[Vansh-02/t5-text-summarizer](https://huggingface.co/Vansh-02/t5-text-summarizer)
